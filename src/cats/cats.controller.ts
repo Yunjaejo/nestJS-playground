@@ -11,7 +11,7 @@ import {
   UseFilters,
 } from '@nestjs/common';
 import { CatsService } from './cats.service';
-import { HttpExceptionFilter } from '../http-exception.filter';
+import { HttpExceptionFilter } from '../common/exceptions/http-exception.filter';
 import { PositiveIntPipe } from '../pipes/positiveint.pipe';
 
 @Controller('cats')
