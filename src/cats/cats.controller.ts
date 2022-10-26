@@ -1,4 +1,5 @@
 import {
+  Body,
   Controller,
   Delete,
   Get,
@@ -13,7 +14,6 @@ import {
 } from '@nestjs/common';
 import { CatsService } from './cats.service';
 import { HttpExceptionFilter } from '../common/exceptions/http-exception.filter';
-import { PositiveIntPipe } from '../pipes/positiveint.pipe';
 import { SuccessInterceptor } from '../common/interceptors/success.interceptor';
 
 @Controller('cats')
@@ -28,7 +28,8 @@ export class CatsController {
   }
 
   @Post('/')
-  async signUp() {
+  async signUp(@Body() body) {
+    console.log(body);
     return 'signup';
   }
 
