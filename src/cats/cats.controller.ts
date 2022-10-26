@@ -8,9 +8,9 @@ import {
   ParseIntPipe,
   Patch,
   Post,
-  Put,
+  Put, Req,
   UseFilters,
-  UseInterceptors,
+  UseInterceptors
 } from '@nestjs/common';
 import { CatsService } from './cats.service';
 import { HttpExceptionFilter } from '../common/exceptions/http-exception.filter';
@@ -28,7 +28,7 @@ export class CatsController {
   }
 
   @Post('/')
-  async signUp(@Body() body) {
+  async signUp(@Body() body, @Req() req) {
     console.log(body);
     return 'signup';
   }
