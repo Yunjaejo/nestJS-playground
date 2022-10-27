@@ -15,6 +15,7 @@ import {
 import { CatsService } from './cats.service';
 import { HttpExceptionFilter } from '../common/exceptions/http-exception.filter';
 import { SuccessInterceptor } from '../common/interceptors/success.interceptor';
+import { CatsRequestDto } from './dto/cats.request.dto';
 
 @Controller('cats')
 @UseInterceptors(SuccessInterceptor)
@@ -28,9 +29,8 @@ export class CatsController {
   }
 
   @Post('/')
-  async signUp(@Body() body, @Req() req) {
-    console.log(body);
-    return 'signup';
+  async signUp(@Body() body: CatsRequestDto) {
+    return await this.catsService.signUp(body);
   }
 
   @Post('login')
