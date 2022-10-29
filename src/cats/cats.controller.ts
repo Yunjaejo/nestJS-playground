@@ -1,15 +1,8 @@
 import {
   Body,
   Controller,
-  Delete,
   Get,
-  HttpException,
-  Param,
-  ParseIntPipe,
-  Patch,
   Post,
-  Put,
-  Req,
   UseFilters,
   UseInterceptors,
 } from '@nestjs/common';
