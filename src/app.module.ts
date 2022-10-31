@@ -11,8 +11,8 @@ import mongoose from 'mongoose';
 
 @Module({
   imports: [
-    CatsModule,
     ConfigModule.forRoot(),
+    CatsModule,
     MongooseModule.forRoot(process.env.MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
